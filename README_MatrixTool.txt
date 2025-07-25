@@ -34,20 +34,7 @@ pip install numpy
 3. Run the program:
 
 ```bash
-python matrix_tool.py
-```
-
-## 📂 Project Structure
-
-```
-matrix-tool/
-├── matrix_tool.py         # Main Python script
-├── Python_July.pdf        # Supporting documentation or notes
-├── README.md              # Project documentation
-└── .gitignore             # Ignored files (e.g., __pycache__)
-```
-
-## 📄 Sample Output
+python Matrix Operation Tool.py
 
 ```
 🔢 Matrix Operations
@@ -81,4 +68,4 @@ A + B:
 
 ## 📬 Contact
 
-Created by [Your Name] – feel free to reach out via GitHub or email for suggestions or improvements.
+Created by Vignesh Durishetty – feel free to reach out via GitHub or email for suggestions or improvements.
