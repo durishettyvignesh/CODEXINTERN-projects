@@ -9,20 +9,23 @@ def index():
     if request.method == "POST":
         txt = request.form["text"]
         blob = TextBlob(txt)
-        pol = round(blob.sentiment.polarity, 2)
-        sub = round(blob.sentiment.subjectivity, 2)
+        
+        # Keep full precision instead of rounding too early
+        pol = blob.sentiment.polarity
+        sub = blob.sentiment.subjectivity
 
-        if pol > 0:
+        # Adjust threshold to be more sensitive
+        if pol >= 0.1:
             sent = "Positive"
-        elif pol < 0:
+        elif pol <= -0.1:
             sent = "Negative"
         else:
             sent = "Neutral"
 
         result = {
             "text": txt,
-            "polarity": pol,
-            "subjectivity": sub,
+            "polarity": round(pol, 3),
+            "subjectivity": round(sub, 3),
             "sentiment": sent
         }
 
